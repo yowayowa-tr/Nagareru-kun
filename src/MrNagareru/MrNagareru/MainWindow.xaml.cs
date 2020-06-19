@@ -37,7 +37,7 @@ namespace MrNagareru
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            string getText = textBox.Text;
         }
     }
 }
