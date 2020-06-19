@@ -50,5 +50,16 @@ namespace MrNagareru
         {
             public string CopyText { get; set; }
         }
+
+        double tomei;
+        private void Text_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tomei = textbox1.Opacity;
+            textbox1.Opacity = 0.5;
+        }
+        private void Text_MouseLeave(object sender, MouseEventArgs e)
+        {
+            textbox1.Opacity = tomei;
+        }
     }
 }
