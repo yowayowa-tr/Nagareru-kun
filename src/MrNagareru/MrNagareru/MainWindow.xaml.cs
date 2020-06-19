@@ -33,11 +33,22 @@ namespace MrNagareru
 
             // 最前面に表示する
             this.Topmost = true;
+
+            //テキストをバインドする
+            CopyClass Data = new CopyClass();
+            Data.CopyText = "メッセージを入力してください。";
+            DataContext = Data;
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string getText = textBox.Text;
+
+        }
+
+        //バインドするためのクラス
+        public class CopyClass
+        {
+            public string CopyText { get; set; }
         }
     }
 }
