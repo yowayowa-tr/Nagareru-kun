@@ -23,10 +23,21 @@ namespace MrNagareru
         public MainWindow()
         {
             InitializeComponent();
-
+            // 全画面表示にする
             this.WindowStyle = WindowStyle.None;
-
             this.WindowState = WindowState.Maximized;
+
+            // 画面を透明にする
+            this.AllowsTransparency = true;
+            this.Background = new SolidColorBrush(Colors.Transparent);
+
+            // 最前面に表示する
+            this.Topmost = true;
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
