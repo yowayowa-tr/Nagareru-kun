@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MrNagareru"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="55" Margin="0,335,0,0" Text="チャットを入力してください" TextWrapping="Wrap" VerticalAlignment="Top" Width="562" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Margin="0,933,0,94" Text="チャットを入力してください" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.5"/>
 
     </Grid>
 </Window>
