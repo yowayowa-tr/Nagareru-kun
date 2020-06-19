@@ -23,6 +23,10 @@ namespace MrNagareru
         public MainWindow()
         {
             InitializeComponent();
+
+            this.WindowStyle = WindowStyle.None;
+
+            this.WindowState = WindowState.Maximized;
         }
     }
 }
