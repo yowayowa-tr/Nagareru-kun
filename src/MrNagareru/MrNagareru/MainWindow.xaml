@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-<<<<<<< HEAD
         <TextBox Name="textbox1" HorizontalAlignment="Center" Margin="0,933,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.01" MouseEnter="Text_MouseEnter" MouseLeave="Text_MouseLeave"/>
         <TextBox Name="textbox2" HorizontalAlignment="Center" Margin="0,133,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="1066" FontSize="30" Opacity="0.5"/>
-=======
-        <TextBox Name="textbox1" HorizontalAlignment="Center" Margin="0,933,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.5"/>
-        <TextBox Name="textbox2" HorizontalAlignment="Center" Margin="0,833,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="1066" FontSize="30" />
->>>>>>> dev-window-hojo
 
     </Grid>
 </Window>

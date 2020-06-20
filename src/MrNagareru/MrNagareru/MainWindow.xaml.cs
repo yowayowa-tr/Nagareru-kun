@@ -50,7 +50,6 @@ namespace MrNagareru
         {
             public string CopyText { get; set; }
         }
-<<<<<<< HEAD
 
         double tomei;
         private void Text_MouseEnter(object sender, MouseEventArgs e)
@@ -62,7 +61,5 @@ namespace MrNagareru
         {
             textbox1.Opacity = tomei;
         }
-=======
->>>>>>> dev-window-hojo
     }
 }
