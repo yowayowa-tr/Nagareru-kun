@@ -51,6 +51,7 @@ namespace MrNagareru
             public string CopyText { get; set; }
         }
 
+        //テキストボックス表示
         double tomei;
         private void Text_MouseEnter(object sender, MouseEventArgs e)
         {

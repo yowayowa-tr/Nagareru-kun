@@ -8,7 +8,34 @@
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
         <TextBox Name="textbox1" HorizontalAlignment="Center" Margin="0,933,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.01" MouseEnter="Text_MouseEnter" MouseLeave="Text_MouseLeave"/>
-        <TextBox Name="textbox2" HorizontalAlignment="Center" Margin="0,133,0,94" Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="1066" FontSize="30" Opacity="0.5"/>
+
+        <Canvas Width="1920" Height="1080" ClipToBounds="True">
+            <TextBlock Name="SampleMarqeeText"
+                   Width="Auto"
+                   Height="Auto"
+                   FontSize="60"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Text="{Binding CopyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <!-- アニメーションイベント. -->
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                Storyboard.TargetName="SampleMarqeeText" 
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                From="1920.0"
+                                To="-1920.0"
+                                Duration="0:0:10" 
+                                AutoReverse="False"
+                                RepeatBehavior="Forever"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+        </Canvas>
 
     </Grid>
 </Window>
