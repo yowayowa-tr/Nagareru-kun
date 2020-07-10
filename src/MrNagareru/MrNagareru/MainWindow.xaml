@@ -3,11 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:MrNagareru"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
-    <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Center" Margin="0,933,0,94" Text="チャットを入力してください" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.5"/>
+        Title="MainWindow" Height="1080" Width="1920"
+        Closed="Window_Closed" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
 
-    </Grid>
+    <Canvas Name="Root">
+        <tb:TaskbarIcon Name="TaskTrayIcon" IconSource="resources\icon.ico">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="OpenSettingWindow" Header="設定画面を開く" Click="OpenSettingWindow_Click"/>
+                    <MenuItem Header="終了" Click="QuitButton_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+            <tb:TaskbarIcon.TrayToolTip>
+                <Border BorderThickness="2">
+                    <TextBlock Foreground="Black" Background="White" TextWrapping="Wrap" Text="TLN2"/>
+                </Border>
+            </tb:TaskbarIcon.TrayToolTip>
+        </tb:TaskbarIcon>
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Margin="0,933,0,94" Text="チャットを入力してください" TextWrapping="Wrap" Width="1066" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.5"/>
+    </Canvas>
+    
 </Window>

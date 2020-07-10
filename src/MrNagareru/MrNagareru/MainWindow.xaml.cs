@@ -35,7 +35,31 @@ namespace MrNagareru
             this.Topmost = true;
         }
 
+
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+
+        }
+
+        // ウィンドウが開いた時
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // 終わるボタン
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        // 設定を開くボタン
+        private void OpenSettingWindow_Click(object sender, EventArgs e)
         {
 
         }
