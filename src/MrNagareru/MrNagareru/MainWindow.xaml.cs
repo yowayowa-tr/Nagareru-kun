@@ -63,5 +63,14 @@ namespace MrNagareru
         {
 
         }
+
+        // テキストボックスがクリックされたとき
+        private void textBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (textBox.Text == "チャットを入力してください")
+            {
+                textBox.Text = String.Empty;
+            }
+        }
     }
 }
