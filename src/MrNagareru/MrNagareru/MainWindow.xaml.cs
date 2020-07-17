@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -72,5 +72,15 @@ namespace MrNagareru
                 textBox.Text = String.Empty;
             }
         }
+
+        // テキストボックスでEnterキーが押されたとき
+        private void textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            // 代入
+            string textValue = textBox.Text;
+            
+            // TODO: ここで送信を処理する関数にtextValueを渡したい
+        }
+
     }
 }

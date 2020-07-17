@@ -23,7 +23,9 @@
                 </Border>
             </tb:TaskbarIcon.TrayToolTip>
         </tb:TaskbarIcon>
-        <TextBox x:Name="textBox" PreviewMouseDown="textBox_PreviewMouseDown" Margin="0,933,0,94" Text="チャットを入力してください" TextWrapping="Wrap" Width="1788" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30" Opacity="0.5" Canvas.Left="66"/>
+        <TextBox x:Name="textBox" PreviewMouseDown="textBox_PreviewMouseDown" Margin="0,933,0,94" Text="チャットを入力してください" 
+                 TextWrapping="Wrap" Width="1788" TextChanged="textBox_TextChanged" RenderTransformOrigin="0.502,-1.08" FontSize="30"
+                 Opacity="0.5" Canvas.Left="66" KeyDown="textBox_KeyDown"/>
     </Canvas>
 
 </Window>
