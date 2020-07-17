@@ -8,11 +8,11 @@ using System.Windows;
 
 namespace src_backend
 {
-    /// <summary>
-    /// App.xaml の相互作用ロジック
-    /// </summary>
     public partial class App : Application
     {
-        Authentiaction _Authentication = new Authentiaction();
+        Authentiaction authentication = new Authentiaction();
+        GetMessage getMessage = new GetMessage();
+        SetMessage setMessage = new SetMessage();
+        UpdatedMessage updatedMessage = new UpdatedMessage();
     }
 }
