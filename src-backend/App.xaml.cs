@@ -10,9 +10,11 @@ namespace src_backend
 {
     public partial class App : Application
     {
-        Authentiaction authentication = new Authentiaction();
-        GetMessage getMessage = new GetMessage();
-        SetMessage setMessage = new SetMessage();
-        UpdatedMessage updatedMessage = new UpdatedMessage();
+        private static Authentiaction _authentication = new Authentiaction();
+        private GetMessage _getMessage;
+        private SetMessage _setMessage;
+        private UpdatedMessage _updatedMessage;
+
+        public static Authentiaction GetAuthentication { get { return _authentication; } }
     }
 }

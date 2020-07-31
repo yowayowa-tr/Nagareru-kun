@@ -7,7 +7,7 @@ using Microsoft.Identity.Client;
 
 namespace src_backend
 {
-    class Authentiaction
+    public class Authentiaction
     {
         private static string ClientId = "29ce940f-4c9f-4e54-a8f9-74b981a14475";
         string[] scopes = new string[] { "user.read" };
