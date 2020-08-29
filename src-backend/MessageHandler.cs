@@ -15,7 +15,7 @@ namespace src_backend
         private GraphServiceClient client;
         private DateTimeOffset lastDate;
 
-        //for test
+        //for demo
         public Replies rep = new Replies();
 
 
@@ -30,6 +30,8 @@ namespace src_backend
 
 
         //public async Task<List<string>> GetMessage(GraphServiceClient client, string url)
+
+        //for demo
         public List<string> GetMessage(GraphServiceClient client, string url)
         {
             var messages = new List<string>();
@@ -39,6 +41,8 @@ namespace src_backend
                 //var replies = await client.Teams[teamId].Channels[channelId].Messages[messageId].Replies
                 //        .Request()
                 //        .GetAsync();
+
+                //for demo
                 var replies = rep.contents;
 
                 if (uri == null || this.client == null || uri.AbsoluteUri != url || this.client != client)
@@ -50,7 +54,7 @@ namespace src_backend
                     {
                         if (lastDate < reply.CreatedDateTime)
                         {
-                            lastDate = reply.CreatedDateTime.Value.Date;
+                            lastDate = reply.CreatedDateTime.Value;
                         }
                     }
                 }
@@ -61,31 +65,29 @@ namespace src_backend
                         if (lastDate < reply.CreatedDateTime)
                         {
                             messages.Add(reply.Body.Content);
-                            lastDate = reply.CreatedDateTime.Value.Date;
+                            lastDate = reply.CreatedDateTime.Value;
                         }
                     }
                 }
             }
             catch (ServiceException ex)
             {
-                Console.WriteLine(ex.StatusCode);
+                Console.WriteLine(ex.Message);
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine("Null Reference Exception happened.");
                 Console.WriteLine(ex.Message);
             }
-            catch (UriFormatException)
+            catch (UriFormatException ex)
             {
-                Console.WriteLine("Uri Format Exception happened.");
+                Console.WriteLine(ex.Message);
                 
             }
 
-            rep.contents.Clear();
             return messages;
         }
 
-        public async void SetMessage(GraphServiceClient client, string url, string message)
+        public async Task SetMessage(GraphServiceClient client, string url, string message)
         {
             try
             {
@@ -103,7 +105,7 @@ namespace src_backend
                     .Request()
                     .AddAsync(chatMessage);
 
-                //for test
+                //for demo
                 rep.AddReply(DateTimeOffset.Now, message);
             }
             catch (ServiceException ex)

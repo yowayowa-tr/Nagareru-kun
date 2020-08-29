@@ -9,7 +9,11 @@ namespace src_backend
     public class Authentiaction
     {
         private static string ClientId = "29ce940f-4c9f-4e54-a8f9-74b981a14475";
-        string[] scopes = new string[] { "Team.ReadBasic.All", "ChannelMessage.Send" /*, "ChannelMessage.Read.All"*/ };
+
+        //string[] scopes = new string[] { "Team.ReadBasic.All", "ChannelMessage.Send", "ChannelMessage.Read.All" };
+
+        //for demo
+        string[] scopes = new string[] { "Team.ReadBasic.All", "ChannelMessage.Send" };
 
         public async Task<GraphServiceClient> GetClient()
         {

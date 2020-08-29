@@ -29,29 +29,31 @@ namespace src_backend
         private void GetMessageButton_Click(object sender, RoutedEventArgs e)
         {   
             var messages = App.messageHandler.GetMessage(App.client, url.Text);
-            foreach (string message in messages)
-            {
+
+            foreach(var message in messages)
                 Console.WriteLine(message);
-            }
         }
 
-        private void SetMessageButton_Click(object sender, RoutedEventArgs e)
+        private async void SetMessageButton_Click(object sender, RoutedEventArgs e)
         {
-           App.messageHandler.SetMessage(App.client, url.Text, message.Text);
-        }
-
-        private void TestButton_Click(object sender, RoutedEventArgs e)
-        {
-            var time = DateTimeOffset.Now;
-            App.messageHandler.rep.AddReply(time, "New content " + time);
+           await App.messageHandler.SetMessage(App.client, url.Text, message.Text);
+           message.Text = string.Empty;
         }
 
         private void textChangedEventHandler(object sender, TextChangedEventArgs args)
         {
-            if (url.Text != "")
+            if (url.Text != string.Empty)
             {
                 App.messageHandler.GetMessage(App.client, url.Text);
             }
+        }
+
+        //for demo
+        private void AddMessageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var time = DateTimeOffset.Now;
+            App.messageHandler.rep.AddReply(time, message.Text + " (" + time + ")");
+            message.Text = string.Empty;
         }
 
     }
