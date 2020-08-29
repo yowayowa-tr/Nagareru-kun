@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Graph;
-using Microsoft.Identity.Client;
 
 namespace src_backend
 {
 
     public partial class MainWindow : Window
     {
-        private GraphServiceClient client;
         public MainWindow()
         {
             InitializeComponent();
@@ -18,21 +15,44 @@ namespace src_backend
 
         private async void AuthenticateButton_Click(object sender, RoutedEventArgs e)
         {
-            client = await App.GetAuthentication.GetClient();
+            try
+            {
+                App.client = await App.auth.GetClient();
+            }
+            catch (ServiceException ex)
+            {
+                Console.WriteLine(ex.StatusCode);
+            }
+
         }
 
         private void GetMessageButton_Click(object sender, RoutedEventArgs e)
-        {
-
+        {   
+            var messages = App.messageHandler.GetMessage(App.client, url.Text);
+            foreach (string message in messages)
+            {
+                Console.WriteLine(message);
+            }
         }
+
         private void SetMessageButton_Click(object sender, RoutedEventArgs e)
         {
-
+           App.messageHandler.SetMessage(App.client, url.Text, message.Text);
         }
 
-        private void UpdatedMessageButton_Click(object sender, RoutedEventArgs e)
+        private void TestButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var time = DateTimeOffset.Now;
+            App.messageHandler.rep.AddReply(time, "New content " + time);
         }
+
+        private void textChangedEventHandler(object sender, TextChangedEventArgs args)
+        {
+            if (url.Text != "")
+            {
+                App.messageHandler.GetMessage(App.client, url.Text);
+            }
+        }
+
     }
 }

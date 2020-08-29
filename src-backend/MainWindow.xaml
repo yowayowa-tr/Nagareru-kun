@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:src_backend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="400">
     <Grid>
-        <Button x:Name="AutenticateButton" Content="Authentication" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Padding="5" Click="AuthenticateButton_Click"/>
-        <Button x:Name="GetMessageButton" Content="getMessage" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Padding="5" Click="GetMessageButton_Click"/>
-        <Button x:Name="SetMessage" Content="setMessage" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Padding="5" Click="SetMessageButton_Click"/>
-        <Button x:Name="UpdatedMessage" Content="updatedMessage" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top" Padding="5" Click="UpdatedMessageButton_Click"/>
+        <Button x:Name="AutenticateButton" Content="Authentication" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Padding="5" Click="AuthenticateButton_Click"/>
+        <TextBox Name="url" Width="200" Height="20" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" TextChanged="textChangedEventHandler" />
+        <Button x:Name="GetMessageButton" Content="getMessage" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Padding="5" Click="GetMessageButton_Click"/>
+        <TextBox Name="message" Width="200" Height="20" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" />
+        <Button x:Name="SetMessage" Content="setMessage" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Padding="5" Click="SetMessageButton_Click"/>
+        <Button x:Name="Test" Content="test" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Padding="5" Click="TestButton_Click"/>
     </Grid>
 </Window>
