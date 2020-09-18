@@ -1,0 +1,21 @@
+﻿<Window x:Class="src_backend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="MainWindow" Height="350" Width="400">
+    <Grid>
+        <Button x:Name="AutenticateButton" Content="Authentication" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Padding="5" Click="AuthenticateButton_Click"/>
+        <TextBox Name="url" Width="200" Height="20" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" TextChanged="textChangedEventHandler" >URL</TextBox>
+        <Button x:Name="GetMessageButton" Content="getMessage" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Padding="5" Click="GetMessageButton_Click"/>
+        <TextBox Name="message" Width="200" Height="20" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" >Message</TextBox>
+        <Button x:Name="SetMessage" Content="setMessage" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Padding="5" Click="SetMessageButton_Click"/>
+        
+        <!-- for demo -->
+        <Button x:Name="AddMessage" Content="addMessage" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Padding="5" Click="AddMessageButton_Click"/>
+        <Button x:Name="CommentOFF" Content="CommentOFF" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="83" Click="CommnetOFF_Click"/>
+        <Button x:Name="CommentON" Content="CommentON" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="83" Click="CommentON_Click"/>
+    </Grid>
+</Window>
