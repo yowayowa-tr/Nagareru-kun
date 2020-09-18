@@ -10,7 +10,6 @@ namespace src_backend
     public partial class MainWindow : Window
     {
         public string receiveData = "BULL";
-        CommentDisplay cdw;
         public MainWindow()
         {
             InitializeComponent();
@@ -78,6 +77,15 @@ namespace src_backend
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             CommentDisplay.GetInstance().Close();
+        }
+
+        // SetMessageのテキストボックスでEnterを押したとき
+        private async void message_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            await App.messageHandler.SetMessage(App.client, url.Text, message.Text);
+            receiveData = message.Text;
+            CommentDisplay.GetInstance().ReceivedComment();
+            message.Text = string.Empty;
         }
     }
 }
